@@ -20,40 +20,42 @@
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_**InProduction** is a productivity and social app for theatrical productions. Create a project to track workflow and get in touch with collaborators quickly. A user can create a project and assign other users roles within that project_
 
+Deployed Link -
 
 <br>
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
-
-<br>
-
-### Goals
-
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- Tables - Users, Projects, Roles
+- User Auth
+- Full CRUD on Projects
+- Fully responsive Styling (Look into MaterialUI, maybe use Sass?)
+- Deployed to Heroku and Netlify
+- Upload project image to AWS
 
 <br>
+
+## Post-MVP
+
+- Expand Active storage - uploading files to AWS
+- Mailing
+- In-App messaging
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
-
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|         Library          | Description                    |
+| :----------------------: | :----------------------------- |
+|          React           | _React._                       |
+|       React Router       | _Routing for React_            |
+|          Rails           | _Rails_                        |
+|       FontAwesome        | _Font Awesome Icon Libraries_  |
+|          Axios           | _FrontEnd API calls_           |
+|           JWT            | _JWT For AUTH_                 |
+|           Cors           | _Backend CORS_                 |
+|        aws-sdk-s3        | _AWS Active Storage_           |
+| active_model_serializers | _serializer for rails and AWS_ |
 
 <br>
 
@@ -61,51 +63,38 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
-
-![Dummy Link](url)
-
-- Desktop Landing
-
-![Dummy Link](url)
-
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
+[Figma Wireframes](https://www.figma.com/file/4bN1wZj37GIoflVn7VgPNK/InProduction-Wireframes?node-id=0%3A1)
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. 
+[Draw.io Component Tree](https://drive.google.com/file/d/11xsAV4mPvM3gBP1ncEykgEfVi0u5QC7p/view?usp=sharing)
 
 #### Component Hierarchy
 
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
-
-``` structure
+```structure
 
 src
 |__ assets/
       |__ fonts
       |__ graphics
       |__ images
-      |__ mockups
+|__ containers/
+      |__ MainContainer.jsx
 |__ components/
-      |__ Header.jsx
+      |__ shared/
+        |__ NavTop.jsx
+        |__ NavLeft.jsx
+        |__ Layout.jsx
+|__ screens/
+      |__ LandingPage.jsx
+      |__ ProjectDetail.jsx
+      |__ ProjectForm.jsx
+      |__ SignIn.jsx
+      |__ SignUp.jsx
 |__ services/
+      |__ apiConfig.js
+      |__ auth.js
+      |__ projects.js
 
 ```
 
@@ -113,36 +102,51 @@ src
 
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
-
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Task                                        | Priority | Estimated Time | Time Invested | Actual Time |
+| ------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
+| Wireframes, planning, ReadMe, etc...        |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
+| Github Setup                                |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
+| BACKEND Setup                               |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| BACKEND Table and models setup              |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| BACKEND Users Auth and CRUD                 |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| BACKEND Projects CRUD                       |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| BACKEND Roles table // Associations         |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| BACKEND ActiveStorage                       |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Setup                              |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND apiConfig and axios calls          |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Auth                               |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Nav and Layout                     |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Nav and Layout Styling             |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Main Container and API calls       |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Main Container Styling             |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Sign Up                            |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Sign Up Styling                    |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Sign In                            |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Sign In Styling                    |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Project Detail                     |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Project Detail Styling             |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Project Create/Edit/Delete         |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Project Create/Edit/Delete Styling |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Landing Screen                     |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| FRONTEND Landing Screen Styling             |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| PMVP BACKEND AWS File uploads               |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| PMVP FRONTEND Social Aspects?               |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| TOTAL                                       |          |     6 hrs      |     3 hrs     |     TBD     |
 
 <br>
 
-### Server (Back End)
+## Server (Back End)
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+[Draw.io ERD](https://drive.google.com/file/d/1N-NiaZCIWEdwmHLy-4wM6nOrUszy3M6k/view?usp=sharing)
 
 <br>
 
-***
-
-## Post-MVP
-
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
-
-***
-
-## Code Showcase
+### Code Showcase
 
 > Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
 
-## Code Issues & Resolutions
+### Code Issues & Resolutions
 
 > Use this section to list of all major issues encountered and their resolution.
