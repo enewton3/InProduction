@@ -45,17 +45,18 @@ Deployed Link -
 
 ### Libraries and Dependencies
 
-|         Library          | Description                    |
-| :----------------------: | :----------------------------- |
-|          React           | _React._                       |
-|       React Router       | _Routing for React_            |
-|          Rails           | _Rails_                        |
-|       FontAwesome        | _Font Awesome Icon Libraries_  |
-|          Axios           | _FrontEnd API calls_           |
-|           JWT            | _JWT For AUTH_                 |
-|           Cors           | _Backend CORS_                 |
-|        aws-sdk-s3        | _AWS Active Storage_           |
-| active_model_serializers | _serializer for rails and AWS_ |
+|         Library          | Description                         |
+| :----------------------: | :---------------------------------- |
+|          React           | _React._                            |
+|       React Router       | _Routing for React_                 |
+|          Rails           | _Rails_                             |
+|       FontAwesome        | _Font Awesome Icon Libraries_       |
+|          Axios           | _FrontEnd API calls_                |
+|           JWT            | _JWT For AUTH_                      |
+|           Cors           | _Backend CORS_                      |
+|        aws-sdk-s3        | _AWS Active Storage_                |
+| active_model_serializers | _serializer for rails and AWS_      |
+|       Material UI        | _Material UI for styled components_ |
 
 <br>
 
@@ -104,10 +105,10 @@ src
 
 | Task                                        | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Wireframes, planning, ReadMe, etc...        |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Github Setup                                |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| BACKEND Setup                               |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| BACKEND Table and models setup              |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| Wireframes, planning, ReadMe, etc...        |    L     |     6 hrs      |     6 hrs     |    6 hrs    |
+| Github Setup                                |    L     |     1 hrs      |     2 hrs     |    3 hrs    |
+| BACKEND Setup                               |    H     |     1 hrs      |     1 hrs     |     TBD     |
+| BACKEND Table and models setup              |    H     |     2 hrs      |     1 hrs     |     TBD     |
 | BACKEND Users Auth and CRUD                 |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | BACKEND Projects CRUD                       |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | BACKEND Roles table // Associations         |    H     |     3 hrs      |     1 hrs     |     TBD     |
@@ -145,8 +146,4 @@ src
 
 ### Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
-
 ### Code Issues & Resolutions
-
-> Use this section to list of all major issues encountered and their resolution.
