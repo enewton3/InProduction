@@ -10,7 +10,7 @@
 
 puts "#{User.count} users created"
 
-@roles = Role.create!([{role:'Production Manager'}, {role:'Stage Manager'}, {role: 'Director'}, {role: 'Producer'}, {role: 'Actor'}, {role: 'Lighting Designer'}])
+@roles = Role.create!([{role:'Production Manager', description:'They manage the productions.'}, {role:'Stage Manager', description: 'They manage the stage'}, {role: 'Director', description:'Director.'}, {role: 'Producer', description: 'Where the money is at.'}, {role: 'Actor', description: 'The pretty face.'}, {role: 'Lighting Designer', description:'Without them, nothing would be seen.'}])
 
 puts "#{Role.count} roles created"
 
@@ -21,3 +21,7 @@ puts "#{Role.count} roles created"
 @hamilton = Project.create!(name: "Hamilton", description: 'Some guys start a war, and then they all die or kill each other.', venue: 'Richard Rogers Theater', start_date:  Time.now, end_date: Time.now + 60, user: @admin)
 
 puts "#{Project.count} projects created"
+
+@admin.project_roles << Role.first
+
+@wicked.users << @admin
