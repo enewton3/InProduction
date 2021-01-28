@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :update, :destroy]
-
+  before_action :authorize_request, only: [:show, :create, :update, :destroy]
+  
   # GET /projects
   def index
     @projects = Project.all
