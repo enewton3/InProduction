@@ -2,17 +2,18 @@
 
 - [Overview](#overview)
 - [MVP](#mvp)
-  - [Goals](#goals)
-  - [Libraries and Dependencies](#libraries-and-dependencies)
-  - [Client (Front End)](#client-front-end)
-    - [Wireframes](#wireframes)
-    - [Component Tree](#component-tree)
-    - [Component Hierarchy](#component-hierarchy)
-    - [Component Breakdown](#component-breakdown)
-    - [Time Estimates](#time-estimates)
-  - [Server (Back End)](#server-back-end)
-    - [ERD Model](#erd-model)
 - [Post-MVP](#post-mvp)
+- [Libraries and Dependencies](#libraries-and-dependencies)
+- [Client (Front End)](#client-front-end)
+  - [Wireframes](#wireframes)
+  - [Component Tree](#component-tree)
+  - [Component Hierarchy](#component-hierarchy)
+  - [Component Breakdown](#component-breakdown)
+- [Time Estimates](#time-estimates)
+- [Server (Back End)](#server-back-end)
+
+  - [ERD Model](#erd-model)
+
 - [Code Showcase](#code-showcase)
 - [Code Issues & Resolutions](#code-issues--resolutions)
 
@@ -40,6 +41,7 @@ Deployed Link -
 ## Post-MVP
 
 - Expand Active storage - uploading files to AWS
+- Desktop version - Electron
 - Mailing
 - In-App messaging
 
@@ -99,8 +101,6 @@ src
 
 ```
 
-[Component tree](url)
-
 #### Time Estimates
 
 | Task                                        | Priority | Estimated Time | Time Invested | Actual Time |
@@ -110,9 +110,10 @@ src
 | BACKEND Setup                               |    H     |     1 hrs      |     1 hrs     |     TBD     |
 | BACKEND Table and models setup              |    H     |     2 hrs      |     1 hrs     |     TBD     |
 | BACKEND Users Auth and CRUD                 |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| BACKEND Projects CRUD                       |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| BACKEND Projects CRUD                       |    H     |     2 hrs      |     1 hrs     |     TBD     |
 | BACKEND Roles table // Associations         |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| BACKEND ActiveStorage                       |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| BACKEND Seed                                |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| BACKEND ActiveStorage                       |    M     |     3 hrs      |     1 hrs     |     TBD     |
 | FRONTEND Setup                              |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | FRONTEND apiConfig and axios calls          |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | FRONTEND Auth                               |    H     |     3 hrs      |     1 hrs     |     TBD     |
@@ -130,8 +131,8 @@ src
 | FRONTEND Project Create/Edit/Delete Styling |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | FRONTEND Landing Screen                     |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | FRONTEND Landing Screen Styling             |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| PMVP BACKEND AWS File uploads               |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| PMVP FRONTEND Social Aspects?               |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| PMVP BACKEND AWS File uploads               |    L     |     3 hrs      |     1 hrs     |     TBD     |
+| PMVP FRONTEND Social Aspects?               |    L     |     3 hrs      |     1 hrs     |     TBD     |
 | TOTAL                                       |          |     6 hrs      |     3 hrs     |     TBD     |
 
 <br>
