@@ -17,8 +17,12 @@ class ProjectsController < ApplicationController
   # POST /projects
   def create
     @project = Project.new(project_params)
-
+    @project.owner = @current_user
+    
     if @project.save
+      @projectroles = Role.all.each do |role|
+        ProjectRole.create!(project: @project, role: role)
+      end
       render json: @project, status: :created, location: @project
     else
       render json: @project.errors, status: :unprocessable_entity
@@ -27,7 +31,7 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   def update
-    if @project.update(project_params)
+    if @current_user == @project.owner && @project.update(project_params)
       render json: @project
     else
       render json: @project.errors, status: :unprocessable_entity
@@ -36,7 +40,13 @@ class ProjectsController < ApplicationController
 
   # DELETE /projects/1
   def destroy
-    @project.destroy
+    if @current_user == @project.owner
+      @project.destroy
+      render json: {message: 'deleted'}, status: :ok
+    else 
+      render json: {errors: 'unauthorized'}, status: :unauthorized
+    end
+    
   end
 
   private
@@ -47,6 +57,7 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :description, :venue, :start_date, :end_date, :owner_id)
+      params.require(:project).permit(:name, :description, :venue, :start_date, :end_date, :owner)
     end
+    
 end
