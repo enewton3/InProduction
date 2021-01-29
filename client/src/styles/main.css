@@ -1,0 +1,39 @@
+.nav-top {
+  background-color: #672B44;
+  color: white;
+  grid-area: top;
+  width: 100vw;
+  height: 5vh;
+  display: grid;
+  grid-template-areas: "logo ...";
+}
+.nav-top .logo {
+  grid-area: logo;
+  justify-self: flex-start;
+  align-self: center;
+  margin: 0 0 0 1vw;
+  font-size: 2rem;
+}
+
+.nav-left {
+  background-color: #672B44;
+  color: white;
+  grid-area: left;
+  margin: 0;
+  height: 100vh;
+  width: 10vw;
+}
+
+.main-container {
+  background-color: #757373;
+  grid-area: body;
+  width: 90vw;
+}
+
+.App {
+  display: grid;
+  grid-template-areas: "top top" "left body";
+  position: fixed;
+}
+
+/*# sourceMappingURL=main.css.map */

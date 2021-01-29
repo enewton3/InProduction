@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'projects/:project_id/roles', to: 'project_roles#project_roles'
   get 'projects/:project_id/users', to: 'project_roles#project_users'
+  get 'projects/:project_id/my_roles', to: 'project_roles#user_project_roles'
   put 'projects/:project_id/roles', to: 'project_roles#update_role'
 
 end
