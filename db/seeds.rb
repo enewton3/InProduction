@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 @admin = User.create!(username:'admin', email: 'admin@admin.com', password:"123456789")
+@evyn = User.create!(username:'evyn', email: 'evyn@evyn.com', password:"123456789")
+@rachel = User.create!(username:'rachel', email: 'rachel@rachel.com', password:"123456789")
 
 puts "#{User.count} users created"
 
@@ -14,14 +16,19 @@ puts "#{User.count} users created"
 
 puts "#{Role.count} roles created"
 
-@wicked = Project.create!(name: "Wicked", description: 'A couple of witches have a bad day.', venue: 'Richard Harris Theater', start_date:  Time.now, end_date: Time.now + 60, user: @admin)
-@pippin = Project.create!(name: "Pippin", description: 'Someone thinks he is special', venue: 'Walter Kerr Theater', start_date:  Time.now, end_date: Time.now + 60, user: @admin)
-@lionking = Project.create!(name: "Lion King", description: 'A bunch of animals sing and dance', venue: 'Disneys number one venue', start_date:  Time.now, end_date: Time.now + 60, user: @admin)
-@rent = Project.create!(name: "Rent", description: 'Christmas bells are ringing.', venue: 'Another such venue', start_date:  Time.now, end_date: Time.now + 60, user: @admin)
-@hamilton = Project.create!(name: "Hamilton", description: 'Some guys start a war, and then they all die or kill each other.', venue: 'Richard Rogers Theater', start_date:  Time.now, end_date: Time.now + 60, user: @admin)
+@wicked = Project.create!(name: "Wicked", description: 'A couple of witches have a bad day.', venue: 'Richard Harris Theater', start_date:  Time.now, end_date: Time.now + 60, owner: @admin)
+@pippin = Project.create!(name: "Pippin", description: 'Someone thinks he is special', venue: 'Walter Kerr Theater', start_date:  Time.now, end_date: Time.now + 60, owner: @admin)
+@lionking = Project.create!(name: "Lion King", description: 'A bunch of animals sing and dance', venue: 'Disneys number one venue', start_date:  Time.now, end_date: Time.now + 60, owner: @admin)
+@rent = Project.create!(name: "Rent", description: 'Christmas bells are ringing.', venue: 'Another such venue', start_date:  Time.now, end_date: Time.now + 60, owner: @admin)
+@hamilton = Project.create!(name: "Hamilton", description: 'Some guys start a war, and then they all die or kill each other.', venue: 'Richard Rogers Theater', start_date:  Time.now, end_date: Time.now + 60, owner: @admin)
 
 puts "#{Project.count} projects created"
 
-@admin.project_roles << Role.first
+@projects = Project.all
+@projects.each do |project|
+  @roles.each do |role|
+    ProjectRole.create!(user: @evyn, project: project, role: role)
+  end
+end
 
-@wicked.users << @admin
+# ProjectRole.create!(user: @evyn, project: @wicked, role: @roles.first)
