@@ -27,7 +27,7 @@ puts "#{Project.count} projects created"
 @projects = Project.all
 @projects.each do |project|
   @roles.each do |role|
-    ProjectRole.create!(user: @evyn, project: project, role: role)
+    ProjectRole.create!(user_id: @evyn, project: project, role: role)
   end
 end
 

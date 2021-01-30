@@ -30,6 +30,10 @@
   width: 90vw;
 }
 
+body {
+  background-color: #757373;
+}
+
 .App {
   display: grid;
   grid-template-areas: "top top" "left body";

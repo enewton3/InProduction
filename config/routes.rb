@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post '/auth/login', to: 'authentication#login'
   get 'auth/verify', to: 'authentication#verify'
 
+  get '/my_projects', to: 'projects#show_mine'
+
   get 'projects/:project_id/roles', to: 'project_roles#project_roles'
   get 'projects/:project_id/users', to: 'project_roles#project_users'
   get 'projects/:project_id/my_roles', to: 'project_roles#user_project_roles'

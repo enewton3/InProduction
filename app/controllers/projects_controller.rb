@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :update, :destroy]
-  before_action :authorize_request, only: [:show, :create, :update, :destroy]
+  before_action :authorize_request, only: [:show, :create, :update, :destroy, :show_mine]
   
   # GET /projects
   def index
@@ -12,6 +12,11 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   def show
     render json: @project
+  end
+
+  def show_mine
+    @my_projects = ProjectRole.where(user_id: @current_user.id)
+    render json: @my_projects, include: :project
   end
 
   # POST /projects
