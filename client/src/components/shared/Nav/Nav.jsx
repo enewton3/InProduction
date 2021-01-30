@@ -1,11 +1,12 @@
 import NavTop from "./NavTop";
 import NavLeft from "./NavLeft";
 
-export default function Nav() {
+export default function Nav(props) {
+  const { currentUser } = props;
   return (
     <>
-      <NavTop />
-      <NavLeft />
+      <NavTop currentUser={currentUser} />
+      {currentUser && <NavLeft />}
     </>
   );
 }
