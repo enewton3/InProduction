@@ -1,7 +1,88 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.landing-page-logged-out {
+  margin: 10vh auto;
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+}
+
+.register-blurb {
+  background-color: #686262;
+  margin: 3vh auto;
+  padding: 5vh 5vw 5vh 5vw;
+  width: 60vw;
+}
+.register-blurb .register-button {
+  margin: 1vw 1vh 1vw 1vh;
+  text-decoration: none;
+}
+
+.login-form {
+  margin: 0 auto;
+  background-color: #686262;
+  padding: 5vh 5vw 5vh 5vw;
+}
+.login-form form {
+  display: flex;
+  flex-flow: column wrap;
+  width: 60vw;
+}
+.login-form form .login-input {
+  margin: 10px;
+  color: black;
+}
+
 .nav-top {
   background-color: #672B44;
   color: white;
-  grid-area: top;
+  position: fixed;
+  top: 0;
   width: 100vw;
   max-height: 10vh;
   display: grid;
@@ -14,12 +95,15 @@
   margin: 0 0 0 1vw;
   padding: 10px;
   font-size: 2rem;
+  text-decoration: none;
+  color: white;
 }
 
 .nav-left {
   background-color: #672B44;
   color: white;
-  grid-area: left;
+  position: fixed;
+  left: 0;
   margin: 0;
   height: 100vh;
   width: 10vw;
@@ -31,14 +115,26 @@
   width: 90vw;
 }
 
-body {
-  background-color: #757373;
+.register-div {
+  align-items: center;
+  justify-items: center;
+  background-color: #686262;
+  margin: 10vh auto;
+  padding: 5vh 5vw 5vh 5vw;
+  width: 80vw;
+}
+.register-div .register-form {
+  display: flex;
+  flex-flow: column wrap;
+}
+.register-div .register-form .register-input {
+  width: 200;
+  margin: 10px;
 }
 
-.App {
-  display: grid;
-  grid-template-areas: "top top" "left body";
-  position: fixed;
+body {
+  background-color: #757373;
+  font-family: "Prompt", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 /*# sourceMappingURL=main.css.map */

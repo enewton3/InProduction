@@ -1,13 +1,12 @@
 import Nav from "../Nav/Nav";
-import Footer from "../Footer/Footer";
 
 export default function Layout(props) {
   const { currentUser } = props;
   return (
-    <>
+    <div className="layout">
       <Nav currentUser={currentUser} />
       {props.children}
-      <Footer />
-    </>
+      {/* <Footer /> */}
+    </div>
   );
 }

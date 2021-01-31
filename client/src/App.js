@@ -1,6 +1,6 @@
+import { theme } from "./styles/muiTheme";
 import { useState, useEffect } from "react";
 import "./styles/main.css";
-import "./App.css";
 import Layout from "./components/shared/Layout/Layout";
 import { Route, Switch, useHistory } from "react-router-dom";
 import LandingPage from "./screens/LandingPage/LandingPage";
@@ -12,18 +12,19 @@ import {
   removeToken,
   verifyUser,
 } from "./services/auth";
+import { ThemeProvider } from "@material-ui/core";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
 
-  // useEffect(() => {
-  //   const handleVerify = async () => {
-  //     const userData = await verifyUser;
-  //     setCurrentUser(userData);
-  //   };
-  //   handleVerify();
-  // });
+  useEffect(() => {
+    const handleVerify = async () => {
+      const userData = await verifyUser();
+      setCurrentUser(userData);
+    };
+    handleVerify();
+  }, []);
 
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
@@ -45,22 +46,24 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Layout currentUser={currentUser} handleLogout={handleLogout}>
-        <Switch>
-          <Route exact path="/">
-            {currentUser ? (
-              <LandingPage />
-            ) : (
-              <LandingPageLoggedOut handleLogin={handleLogin} />
-            )}
-          </Route>
-          <Route path="/register">
-            <Register handleRegister={handleRegister} />
-          </Route>
-        </Switch>
-      </Layout>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Layout currentUser={currentUser} handleLogout={handleLogout}>
+          <Switch>
+            <Route exact path="/">
+              {currentUser ? (
+                <LandingPage />
+              ) : (
+                <LandingPageLoggedOut handleLogin={handleLogin} />
+              )}
+            </Route>
+            <Route path="/register">
+              <Register handleRegister={handleRegister} />
+            </Route>
+          </Switch>
+        </Layout>
+      </div>
+    </ThemeProvider>
   );
 }
 
