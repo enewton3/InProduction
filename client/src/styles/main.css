@@ -45,6 +45,55 @@ input {
   border-radius: 0;
 }
 
+.nav-top {
+  background-color: #672B44;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 8vh;
+  display: grid;
+  grid-template-areas: "logo ...";
+  box-shadow: 5px 5px 5px #686262;
+}
+.nav-top .logo {
+  grid-area: logo;
+  justify-self: flex-start;
+  align-self: baseline;
+  margin: 0 0 0 1vw;
+  padding: 10px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+}
+.nav-top .logged-in-options {
+  display: flex;
+  flex-flow: row;
+  align-items: baseline;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.nav-top .logged-in-options .greeting {
+  margin: 0 2vw 0 0;
+  align-self: center;
+}
+.nav-top .logged-in-options #user-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-left {
+  background-color: #672B44;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 8vh;
+  margin: 0;
+  height: 100vh;
+  width: 10vw;
+  box-shadow: 5px 5px 5px #686262;
+}
+
 .landing-page-logged-out {
   margin: 10vh auto;
   display: flex;
@@ -78,41 +127,13 @@ input {
   color: black;
 }
 
-.nav-top {
-  background-color: #672B44;
-  color: white;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  max-height: 10vh;
-  display: grid;
-  grid-template-areas: "logo ...";
-}
-.nav-top .logo {
-  grid-area: logo;
-  justify-self: flex-start;
-  align-self: center;
-  margin: 0 0 0 1vw;
-  padding: 10px;
-  font-size: 2rem;
-  text-decoration: none;
-  color: white;
-}
-
-.nav-left {
-  background-color: #672B44;
-  color: white;
-  position: fixed;
-  left: 0;
-  margin: 0;
-  height: 100vh;
-  width: 10vw;
-}
-
-.main-container {
+.landing-page-container {
   background-color: #757373;
-  grid-area: body;
   width: 90vw;
+  position: fixed;
+  top: 8vh;
+  left: 10vw;
+  background: none;
 }
 
 .register-div {

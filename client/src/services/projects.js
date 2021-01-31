@@ -6,7 +6,7 @@ export const getAllProjects = async () => {
 };
 
 export const getUserProjects = async () => {
-  const resp = await api.get("/projects/my_projects");
+  const resp = await api.get("/my_projects");
   return resp.data;
 };
 
@@ -25,7 +25,7 @@ export const putProject = async (id, projectData) => {
   return resp.data;
 };
 
-getOneProject = async (id) => {
+export const getOneProject = async (id) => {
   const resp = await api.get(`/projects/${id}`);
   return resp.data;
 };

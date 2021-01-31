@@ -12,7 +12,7 @@
 
 puts "#{User.count} users created"
 
-@roles = Role.create!([{role:'Production Manager', description:'They manage the productions.'}, {role:'Stage Manager', description: 'They manage the stage'}, {role: 'Director', description:'Director.'}, {role: 'Producer', description: 'Where the money is at.'}, {role: 'Actor', description: 'The pretty face.'}, {role: 'Lighting Designer', description:'Without them, nothing would be seen.'}])
+@roles = Role.create!([{role:'Production Manager', description:'They manage the productions.'}, {role:'Stage Manager', description: 'They manage the stage'}, {role: 'Director', description:'Director.'}, {role: 'Producer', description: 'Where the money is at.'}, {role: 'Actor', description: 'The pretty face.'}, {role: 'Lighting Designer', description:'Without them, nothing would be seen.'}, {role: 'Owner', description: 'They created this project.'}])
 
 puts "#{Role.count} roles created"
 
@@ -27,7 +27,7 @@ puts "#{Project.count} projects created"
 @projects = Project.all
 @projects.each do |project|
   @roles.each do |role|
-    ProjectRole.create!(user_id: @evyn, project: project, role: role)
+    ProjectRole.create!(user_id: @evyn.id, project: project, role: role)
   end
 end
 

@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import "./styles/main.css";
 import Layout from "./components/shared/Layout/Layout";
 import { Route, Switch, useHistory } from "react-router-dom";
-import LandingPage from "./screens/LandingPage/LandingPage";
 import LandingPageLoggedOut from "./screens/LandingPage/LandingPageLoggedOut";
+import MainContainer from "./containers/MainContainer/MainContainer";
 import Register from "./screens/Register/Register";
 import {
   loginUser,
@@ -52,7 +52,7 @@ function App() {
           <Switch>
             <Route exact path="/">
               {currentUser ? (
-                <LandingPage />
+                <MainContainer currentUser={currentUser} />
               ) : (
                 <LandingPageLoggedOut handleLogin={handleLogin} />
               )}

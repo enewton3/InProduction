@@ -2,10 +2,10 @@ import NavTop from "./NavTop";
 import NavLeft from "./NavLeft";
 
 export default function Nav(props) {
-  const { currentUser } = props;
+  const { currentUser, handleLogout } = props;
   return (
     <>
-      <NavTop currentUser={currentUser} />
+      <NavTop currentUser={currentUser} handleLogout={handleLogout} />
       {currentUser && <NavLeft />}
     </>
   );

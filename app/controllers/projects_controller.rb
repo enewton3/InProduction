@@ -26,7 +26,11 @@ class ProjectsController < ApplicationController
     
     if @project.save
       @projectroles = Role.all.each do |role|
-        ProjectRole.create!(project: @project, role: role)
+        if role.role == 'Owner'
+          ProjectRole.create!(project: @project, role: role, user_id: @current_user.id)
+        else 
+          ProjectRole.create!(project: @project, role: role)
+        end
       end
       render json: @project, status: :created, location: @project
     else

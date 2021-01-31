@@ -1,10 +1,19 @@
 import { Avatar } from "@material-ui/core";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 
 export default function NavTop(props) {
-  const [userMenuToggle, setUserMenuToggle] = useState(false);
-  const { currentUser } = props;
+  const [anchorE1, setAnchorE1] = useState(null);
+  const { currentUser, handleLogout } = props;
+  const params = useParams();
+  const handleClick = (e) => {
+    setAnchorE1(e.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorE1(null);
+  };
 
   const loggedIn = (
     <>
@@ -12,8 +21,29 @@ export default function NavTop(props) {
       <Avatar
         alt={currentUser?.username}
         src={currentUser?.prof_pic}
-        onClick={() => setUserMenuToggle((prev) => !prev)}
+        onClick={handleClick}
+        aria-controls="user-menu"
+        aria-haspopup="true"
+        id="user-avatar"
       />
+      <Menu
+        id="user-menu"
+        anchorE1={anchorE1}
+        keepMounted
+        open={Boolean(anchorE1)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>Account Settings</MenuItem>
+        <MenuItem
+          onClick={() => {
+            handleLogout();
+            handleClose();
+          }}
+        >
+          Logout
+        </MenuItem>
+      </Menu>
     </>
   );
 
@@ -24,7 +54,10 @@ export default function NavTop(props) {
       <Link className="logo" to="/">
         InProduction
       </Link>
-      <div>{currentUser ? loggedIn : loggedOut}</div>
+      {/* {params.id && <div>{currentProject.name}</div>} */}
+      <div className="logged-in-options">
+        {currentUser ? loggedIn : loggedOut}
+      </div>
     </div>
   );
 }
