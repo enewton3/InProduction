@@ -6,6 +6,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
+import defaultImage from "../../assets/images/defaultCardImage.jpg";
 
 export default function ProjectCard(props) {
   const { project } = props;
@@ -14,7 +15,7 @@ export default function ProjectCard(props) {
       <CardActionArea>
         <CardMedia
           className="card-image"
-          src={project.image}
+          image={project.image ? project.image : defaultImage}
           title={project.name}
         />
         <Link id="project-card-name" to={`/project/${project.id}`}>

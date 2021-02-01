@@ -1,4 +1,3 @@
-import { UserContext } from "../../../context/UserContext";
 import Nav from "../Nav/Nav";
 
 export default function Layout(props) {

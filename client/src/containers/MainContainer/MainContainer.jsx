@@ -14,7 +14,7 @@ import { filterProjects } from "../../services/projectFunctions";
 export default function MainContainer(props) {
   const { setCurrentProject, setProjects } = props;
   const [myProjects, setMyProjects] = useState([]);
-  const [myRoles, setMyRoles] = useState([]);
+  // const [myRoles, setMyRoles] = useState([]);
   const history = useHistory();
   const [uniqueProjects, setUniqueProjects] = useState([]);
 
@@ -22,7 +22,7 @@ export default function MainContainer(props) {
     const projectRoles = await getUserProjects();
     const projectsAll = projectRoles.map((item) => item.project);
     setMyProjects(projectsAll);
-    setMyRoles(projectRoles);
+    // setMyRoles(projectRoles);
   };
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function MainContainer(props) {
 
   useEffect(() => {
     setProjects(uniqueProjects);
-  }, [uniqueProjects]);
+  }, [uniqueProjects, setProjects]);
 
   const handleCreate = async (projectData) => {
     const newProject = await postProject(projectData);

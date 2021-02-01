@@ -27,9 +27,7 @@ export default function ProjectForm(props) {
 
   useEffect(() => {
     if (id) {
-      const project = projects.filter(
-        (item) => item.id === parseInt(params.id)
-      )[0];
+      const project = projects.filter((item) => item.id === parseInt(id))[0];
       if (project) {
         setCurrentProject(project);
         setFormData(project);
@@ -39,7 +37,7 @@ export default function ProjectForm(props) {
     return function cleanup() {
       setCurrentProject({});
     };
-  }, [projects]);
+  }, [projects, id, setCurrentProject]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -1,5 +1,5 @@
 import { Paper } from "@material-ui/core";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 
 export default function LandingPage(props) {

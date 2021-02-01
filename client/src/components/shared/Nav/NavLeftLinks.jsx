@@ -6,7 +6,11 @@ export default function NavLeftLinks(props) {
   return (
     <List className="nav-left-links">
       {projects.map((item) => (
-        <Link className="nav-left-link" to={`/project/${item.id}`}>
+        <Link
+          key={`${item.name}link`}
+          className="nav-left-link"
+          to={`/project/${item.id}`}
+        >
           <ListItem>{item.name}</ListItem>
           <Divider />
         </Link>

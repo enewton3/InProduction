@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import QuickLinks from "../../components/QuickLinks/QuickLinks";
 import Information from "../../components/Information/Information";
 import { Backdrop, CircularProgress } from "@material-ui/core";
+import defaultImage from "../../assets/images/defaultCardImage.jpg";
 
 export default function ProjectDetail(props) {
   const { projects, setCurrentProject } = props;
@@ -19,7 +20,7 @@ export default function ProjectDetail(props) {
     return function cleanup() {
       setCurrentProject({});
     };
-  }, [projects]);
+  }, [projects, params.id, setCurrentProject]);
 
   return (
     <>
@@ -28,7 +29,7 @@ export default function ProjectDetail(props) {
           <QuickLinks project={project} />
           <img
             className="project-detail-image"
-            src={project.image}
+            src={project.image ? project.image : defaultImage}
             alt={project.name}
           />
           <div className="recent-project-updates">Recent</div>

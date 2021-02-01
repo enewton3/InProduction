@@ -22,11 +22,11 @@ export default function Register(props) {
     }));
   };
 
-  const passwordMatch = () => {
-    if (password === passwordConfirmation) {
-      return true;
-    }
-  };
+  // const passwordMatch = () => {
+  //   if (password === passwordConfirmation) {
+  //     return true;
+  //   }
+  // };
 
   return (
     <Paper className="register-div">

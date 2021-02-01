@@ -1,5 +1,5 @@
 import { Button, TextField } from "@material-ui/core";
-import { DateTimePicker } from "@material-ui/pickers";
+// import { DateTimePicker } from "@material-ui/pickers";
 
 export default function ProjectMainForm(props) {
   const { formData, setFormData, handleSubmit } = props;
@@ -56,7 +56,7 @@ export default function ProjectMainForm(props) {
         <TextField
           id="start-date"
           label="Start Date"
-          type="date"
+          type="datetime-local"
           name="start_date"
           className="input-form-start-date"
           variant="outlined"
@@ -67,7 +67,7 @@ export default function ProjectMainForm(props) {
         <TextField
           id="end-date"
           label="End Date"
-          type="date"
+          type="datetime-local"
           name="end_date"
           className="input-form-end-date"
           variant="outlined"

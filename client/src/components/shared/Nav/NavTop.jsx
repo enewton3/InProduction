@@ -1,12 +1,11 @@
-import { Button } from "@material-ui/core";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ProjectContext } from "../../../context/ProjectContext";
 import { UserContext } from "../../../context/UserContext";
+import NavProjectInfo from "./NavProjectInfo";
 import UserMenu from "./UserMenu";
 
 export default function NavTop(props) {
   const { handleLogout } = props;
-  const params = useParams();
 
   return (
     <div className="nav-top">
@@ -14,36 +13,31 @@ export default function NavTop(props) {
         InProduction
       </Link>
       <ProjectContext.Consumer>
-        {(value) => {
+        {(project) => {
           return (
-            <div className="nav-project-info">
-              {value ? (
-                <>
-                  {value.name && (
-                    <>
-                      <div className="nav-project-name">{value.name}</div>
-                      <Link to={`/project-edit/${value.id}`}>
-                        <Button>Project Settings</Button>
-                      </Link>
-                    </>
-                  )}
-                </>
-              ) : null}
-            </div>
+            <>
+              {project && Object.keys(project).length > 0 ? (
+                <NavProjectInfo project={project} />
+              ) : (
+                <div></div>
+              )}
+            </>
           );
         }}
       </ProjectContext.Consumer>
-      <UserContext.Consumer>
-        {(value) => {
-          return (
-            <div className="logged-in-options">
-              {value ? (
-                <UserMenu currentUser={value} handleLogout={handleLogout} />
-              ) : null}
-            </div>
-          );
-        }}
-      </UserContext.Consumer>
+      <div className="logged-in-options">
+        <UserContext.Consumer>
+          {(user) => {
+            return (
+              <>
+                {user && Object.keys(user).length > 0 ? (
+                  <UserMenu currentUser={user} handleLogout={handleLogout} />
+                ) : null}
+              </>
+            );
+          }}
+        </UserContext.Consumer>
+      </div>
     </div>
   );
 }
