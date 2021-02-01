@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
-import { createContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import QuickLinks from "../../components/QuickLinks/QuickLinks";
 import Information from "../../components/Information/Information";
-import { ProjectContext } from "../../context/ProjectContext";
 import { Backdrop, CircularProgress } from "@material-ui/core";
 
 export default function ProjectDetail(props) {

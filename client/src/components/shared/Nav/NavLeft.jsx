@@ -11,8 +11,8 @@ export default function NavLeft(props) {
           return <NavLeftLinks projects={value} />;
         }}
       </ProjectsContext.Consumer>
-      <Link className="nav-left-link" to="">
-        <ListItem>New Project</ListItem>{" "}
+      <Link className="nav-left-link" to="/create-project">
+        <ListItem>New Project</ListItem>
       </Link>
     </div>
   );

@@ -3,8 +3,13 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import ProjectDetail from "../../screens/ProjectDetail/ProjectDetail";
 import ProjectForm from "../../screens/ProjectForm/ProjectForm";
 import LandingPage from "../../screens/LandingPage/LandingPage";
-import { getUserProjects, postProject } from "../../services/projects";
-import { filterProjects } from "../../services/projectLists";
+import {
+  deleteProject,
+  getUserProjects,
+  postProject,
+  putProject,
+} from "../../services/projects";
+import { filterProjects } from "../../services/projectFunctions";
 
 export default function MainContainer(props) {
   const { setCurrentProject, setProjects } = props;
@@ -32,9 +37,30 @@ export default function MainContainer(props) {
     setProjects(uniqueProjects);
   }, [uniqueProjects]);
 
-  const handleCreate = () => {
-    // const newProject = await postProject(projectData)
-    // setMyProjects()
+  const handleCreate = async (projectData) => {
+    const newProject = await postProject(projectData);
+    setMyProjects((prevState) => [...prevState, newProject]);
+    setProjects();
+    history.push("/");
+  };
+
+  const handleDelete = async (id) => {
+    await deleteProject(id);
+    setMyProjects((prevState) =>
+      prevState.filter((project) => {
+        return project.id !== id;
+      })
+    );
+  };
+
+  const handleUpdate = async (id, projectData) => {
+    const updatedProject = await putProject(id, projectData);
+    setMyProjects((prevState) =>
+      prevState.map((project) => {
+        return project.id === parseInt(id) ? updatedProject : project;
+      })
+    );
+    history.push("/");
   };
 
   return (
@@ -46,10 +72,22 @@ export default function MainContainer(props) {
         />
       </Route>
       <Route path="/create-project">
-        <ProjectForm />
+        <ProjectForm
+          handleCreate={handleCreate}
+          handleDelete={handleDelete}
+          handleUpdate={handleUpdate}
+          projects={uniqueProjects}
+          setCurrentProject={setCurrentProject}
+        />
       </Route>
       <Route path="/project-edit/:id">
-        <ProjectForm />
+        <ProjectForm
+          handleCreate={handleCreate}
+          handleDelete={handleDelete}
+          handleUpdate={handleUpdate}
+          projects={uniqueProjects}
+          setCurrentProject={setCurrentProject}
+        />
       </Route>
       <Route path="/">
         <LandingPage uniqueProjects={uniqueProjects} />

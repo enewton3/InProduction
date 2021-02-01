@@ -19,7 +19,7 @@ export default function NavTop(props) {
               {value.name ? (
                 <>
                   <div className="nav-project-name">{value.name}</div>
-                  <Link to={`/project/${value.id}/edit`}>
+                  <Link to={`/project-edit/${value.id}`}>
                     <Button>Project Settings</Button>
                   </Link>
                 </>

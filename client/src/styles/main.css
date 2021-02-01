@@ -288,6 +288,31 @@ input {
   grid-area: recent;
 }
 
+.project-form-container {
+  display: grid;
+  grid-template-areas: "";
+}
+.project-form-container .project-forms {
+  margin: 8vh 0 10vh 10vw;
+  display: grid;
+  grid-template-areas: "1 2";
+}
+.project-form-container .main-form {
+  display: flex;
+  flex-flow: column wrap;
+  padding-top: 2vh;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+}
+.project-form-container .main-form .project-form-input {
+  margin: 1vh 0 1vh 0;
+}
+.project-form-container .main-form .date-inputs {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 body {
   background-color: #757373;
   font-family: "Prompt", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;

@@ -58,6 +58,9 @@ function App() {
             <ProjectContext.Provider value={currentProject}>
               <Layout handleLogout={handleLogout}>
                 <Switch>
+                  <Route path="/register">
+                    <Register handleRegister={handleRegister} />
+                  </Route>
                   <Route path="/">
                     {currentUser ? (
                       <MainContainer
@@ -67,9 +70,6 @@ function App() {
                     ) : (
                       <LandingPageLoggedOut handleLogin={handleLogin} />
                     )}
-                  </Route>
-                  <Route path="/register">
-                    <Register handleRegister={handleRegister} />
                   </Route>
                 </Switch>
               </Layout>
