@@ -45,6 +45,25 @@ input {
   border-radius: 0;
 }
 
+.nav-left {
+  background-color: #672B44;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 8vh;
+  margin: 0;
+  height: 100vh;
+  width: 10vw;
+  box-shadow: 5px 5px 5px #686262;
+  z-index: 1000;
+  display: flex;
+  flex-flow: column wrap;
+}
+.nav-left .nav-left-link {
+  color: white;
+  text-decoration: none;
+}
+
 .nav-top {
   background-color: #672B44;
   color: white;
@@ -53,8 +72,9 @@ input {
   width: 100vw;
   height: 8vh;
   display: grid;
-  grid-template-areas: "logo ...";
+  grid-template-areas: "logo 2 3";
   box-shadow: 5px 5px 5px #686262;
+  z-index: 1000;
 }
 .nav-top .logo {
   grid-area: logo;
@@ -81,17 +101,26 @@ input {
   width: 50px;
   height: 50px;
 }
-
-.nav-left {
+.nav-top .logged-in-options .user-menu {
+  position: absolute;
   background-color: #672B44;
-  color: white;
-  position: fixed;
-  left: 0;
   top: 8vh;
-  margin: 0;
-  height: 100vh;
-  width: 10vw;
-  box-shadow: 5px 5px 5px #686262;
+  z-index: 900;
+  right: 0;
+}
+.nav-top .logged-in-options .user-menu-enter {
+  transform: translateX(100%);
+}
+.nav-top .logged-in-options .user-menu-enter-active {
+  transform: translateX(0);
+  transition: transform 0.3s linear;
+}
+.nav-top .logged-in-options .user-menu-exit {
+  transform: translateX(0);
+}
+.nav-top .logged-in-options .user-menu-exit-active {
+  transform: translateX(100%);
+  transition: transform 0.3s linear;
 }
 
 .landing-page-logged-out {
@@ -129,11 +158,49 @@ input {
 
 .landing-page-container {
   background-color: #757373;
+  display: grid;
+  grid-template-areas: "1 2";
+  margin: 8vh 0 10vh 10vw;
   width: 90vw;
-  position: fixed;
   top: 8vh;
   left: 10vw;
   background: none;
+  overflow: auto;
+}
+.landing-page-container .project-cards-container {
+  margin-left: 1vw;
+  height: 100%;
+  width: 50vw;
+  justify-self: center;
+}
+.landing-page-container .project-card-heading {
+  text-align: center;
+  padding: 1vh;
+  color: white;
+  font-size: 1.6rem;
+}
+.landing-page-container .project-cards {
+  display: grid;
+  grid-template-areas: "1 2";
+  column-gap: 1vw;
+  row-gap: 2vh;
+  overflow: scroll;
+}
+
+.updates-container {
+  width: 30vw;
+  justify-self: center;
+  align-self: baseline;
+}
+.updates-container .updates-header {
+  text-align: center;
+  padding: 1vh;
+  color: white;
+  font-size: 1.6rem;
+}
+.updates-container .updates-paper {
+  width: 30vw;
+  height: 100vh;
 }
 
 .register-div {
@@ -151,6 +218,74 @@ input {
 .register-div .register-form .register-input {
   width: 200;
   margin: 10px;
+}
+
+.project-card {
+  height: 40vh;
+  padding: 0 2vw 0 2vw;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+#project-card-name {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+#project-card-buttons {
+  display: grid;
+  grid-template-areas: "1 2" "3 4";
+  padding: 0;
+  align-self: flex-end;
+  column-gap: 1vw;
+  row-gap: 2vh;
+  width: 100%;
+}
+
+#project-card-button {
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  justify-self: center;
+  color: white;
+}
+
+.quick-links-menu {
+  grid-area: quick;
+  width: 20vw;
+  background-color: #C4C4C4;
+  box-shadow: 2px 2px 2px #686262;
+}
+.quick-links-menu .quick-links-item {
+  color: white;
+  text-decoration: none;
+}
+
+.information-container {
+  grid-area: info;
+  width: 30vw;
+  height: 100vh;
+  justify-self: right;
+  align-self: baseline;
+  margin: 2vh 1vw 10vh 1vw;
+  background-color: #C4C4C4;
+}
+
+.project-detail-container {
+  margin: 8vh 0 10vh 10vw;
+  display: grid;
+  grid-template-areas: "quick img info" "...recent info";
+}
+.project-detail-container .project-detail-image {
+  grid-area: img;
+}
+.project-detail-container .recent-project-updates {
+  grid-area: recent;
 }
 
 body {

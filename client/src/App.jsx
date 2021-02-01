@@ -13,9 +13,14 @@ import {
   verifyUser,
 } from "./services/auth";
 import { ThemeProvider } from "@material-ui/core";
+import { UserContext } from "./context/UserContext";
+import { ProjectContext } from "./context/ProjectContext";
+import { ProjectsContext } from "./context/ProjectsContext";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [currentProject, setCurrentProject] = useState({});
+  const [projects, setProjects] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -48,20 +53,29 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Layout currentUser={currentUser} handleLogout={handleLogout}>
-          <Switch>
-            <Route exact path="/">
-              {currentUser ? (
-                <MainContainer currentUser={currentUser} />
-              ) : (
-                <LandingPageLoggedOut handleLogin={handleLogin} />
-              )}
-            </Route>
-            <Route path="/register">
-              <Register handleRegister={handleRegister} />
-            </Route>
-          </Switch>
-        </Layout>
+        <UserContext.Provider value={currentUser}>
+          <ProjectsContext.Provider value={projects}>
+            <ProjectContext.Provider value={currentProject}>
+              <Layout handleLogout={handleLogout}>
+                <Switch>
+                  <Route path="/">
+                    {currentUser ? (
+                      <MainContainer
+                        setCurrentProject={setCurrentProject}
+                        setProjects={setProjects}
+                      />
+                    ) : (
+                      <LandingPageLoggedOut handleLogin={handleLogin} />
+                    )}
+                  </Route>
+                  <Route path="/register">
+                    <Register handleRegister={handleRegister} />
+                  </Route>
+                </Switch>
+              </Layout>
+            </ProjectContext.Provider>
+          </ProjectsContext.Provider>
+        </UserContext.Provider>
       </div>
     </ThemeProvider>
   );

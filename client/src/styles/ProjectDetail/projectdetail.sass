@@ -1,0 +1,13 @@
+@import './quicklinks'
+@import './information'
+
+.project-detail-container
+  margin: 8vh 0 10vh 10vw
+  display: grid
+  grid-template-areas: 'quick img info' '...recent info'
+
+  .project-detail-image
+    grid-area: img
+
+  .recent-project-updates
+    grid-area: recent
