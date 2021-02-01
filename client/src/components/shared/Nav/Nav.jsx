@@ -7,7 +7,11 @@ export default function Nav(props) {
   return (
     <nav>
       <NavTop handleLogout={handleLogout} />
-      <UserContext.Consumer>{(value) => <NavLeft />}</UserContext.Consumer>
+      <UserContext.Consumer>
+        {(user) => {
+          return user ? <NavLeft /> : null;
+        }}
+      </UserContext.Consumer>
     </nav>
   );
 }
