@@ -40,8 +40,8 @@ export default function MainContainer(props) {
   const handleCreate = async (projectData) => {
     const newProject = await postProject(projectData);
     setMyProjects((prevState) => [...prevState, newProject]);
-    setProjects();
-    history.push("/");
+    setProjects(uniqueProjects);
+    history.push(`/project/${newProject.id}`);
   };
 
   const handleDelete = async (id) => {
@@ -51,6 +51,8 @@ export default function MainContainer(props) {
         return project.id !== id;
       })
     );
+    setProjects(uniqueProjects);
+    history.push("/");
   };
 
   const handleUpdate = async (id, projectData) => {

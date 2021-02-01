@@ -1,4 +1,5 @@
-import { TextField } from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
+import { DateTimePicker } from "@material-ui/pickers";
 
 export default function ProjectMainForm(props) {
   const { formData, setFormData, handleSubmit } = props;
@@ -75,6 +76,9 @@ export default function ProjectMainForm(props) {
           onChange={handleChange}
         />
       </div>
+      <Button type="submit" variant="outlined">
+        Submit!
+      </Button>
     </form>
   );
 }

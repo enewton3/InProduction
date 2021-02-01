@@ -22,13 +22,18 @@ export default function ProjectForm(props) {
   });
   const params = useParams();
   const id = parseInt(params.id);
+  const confirmMessage =
+    "Are you sure you want to delete this project? This action cannot be undone.";
 
   useEffect(() => {
     if (id) {
       const project = projects.filter(
         (item) => item.id === parseInt(params.id)
       )[0];
-      setCurrentProject(project);
+      if (project) {
+        setCurrentProject(project);
+        setFormData(project);
+      }
     }
 
     return function cleanup() {
@@ -55,7 +60,18 @@ export default function ProjectForm(props) {
         />
         <div className="roles-form">Roles form</div>
       </div>
-      <Button>Delete Project</Button>
+      {id ? (
+        <Button
+          variant="outlined"
+          onClick={() => {
+            if (window.confirm(confirmMessage)) {
+              handleDelete(id);
+            }
+          }}
+        >
+          Delete Project
+        </Button>
+      ) : null}
     </div>
   );
 }

@@ -301,12 +301,13 @@ input {
   display: flex;
   flex-flow: column wrap;
   padding-top: 2vh;
-  width: 60%;
+  width: 80%;
   align-items: center;
   justify-content: center;
 }
 .project-form-container .main-form .project-form-input {
   margin: 1vh 0 1vh 0;
+  width: 40vw;
 }
 .project-form-container .main-form .date-inputs {
   display: flex;

@@ -40,6 +40,7 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   def update
+    puts "owner!!!! #{@project.owner}"
     if @current_user == @project.owner && @project.update(project_params)
       render json: @project
     else
@@ -50,6 +51,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   def destroy
     if @current_user == @project.owner
+      @project.roles.destroy_all
       @project.destroy
       render json: {message: 'deleted'}, status: :ok
     else 
@@ -66,7 +68,7 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :description, :venue, :start_date, :end_date, :owner)
+      params.require(:project).permit(:name, :description, :venue, :url, :start_date, :end_date, :owner)
     end
     
 end

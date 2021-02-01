@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { ProjectContext } from "../../../context/ProjectContext";
 import { UserContext } from "../../../context/UserContext";
 import UserMenu from "./UserMenu";
+
 export default function NavTop(props) {
   const { handleLogout } = props;
   const params = useParams();
@@ -16,12 +17,16 @@ export default function NavTop(props) {
         {(value) => {
           return (
             <div className="nav-project-info">
-              {value.name ? (
+              {value ? (
                 <>
-                  <div className="nav-project-name">{value.name}</div>
-                  <Link to={`/project-edit/${value.id}`}>
-                    <Button>Project Settings</Button>
-                  </Link>
+                  {value.name && (
+                    <>
+                      <div className="nav-project-name">{value.name}</div>
+                      <Link to={`/project-edit/${value.id}`}>
+                        <Button>Project Settings</Button>
+                      </Link>
+                    </>
+                  )}
                 </>
               ) : null}
             </div>

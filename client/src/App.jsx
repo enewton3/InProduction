@@ -61,16 +61,18 @@ function App() {
                   <Route path="/register">
                     <Register handleRegister={handleRegister} />
                   </Route>
-                  <Route path="/">
-                    {currentUser ? (
+                  {currentUser ? (
+                    <Route path="/">
                       <MainContainer
                         setCurrentProject={setCurrentProject}
                         setProjects={setProjects}
                       />
-                    ) : (
+                    </Route>
+                  ) : (
+                    <Route path="/">
                       <LandingPageLoggedOut handleLogin={handleLogin} />
-                    )}
-                  </Route>
+                    </Route>
+                  )}
                 </Switch>
               </Layout>
             </ProjectContext.Provider>
