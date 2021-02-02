@@ -23,7 +23,7 @@ export default function Announcements(props) {
 
   const { announcements } = props;
 
-  const sortedAnnouncements = announcements.sort((a, b) => {});
+  // const sortedAnnouncements = announcements.sort((a, b) => {});
 
   return (
     <>

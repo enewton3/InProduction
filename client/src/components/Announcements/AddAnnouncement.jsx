@@ -7,12 +7,12 @@ import {
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import { useState } from "react";
 import { postAnnouncement } from "../../services/announcements";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import AccountCircle from "@material-ui/icons/AccountCircle";
 
 export default function AddAnnouncement(props) {
   const params = useParams();
-  const history = useHistory();
+  // const history = useHistory();
   const { currentUser, setAnnouncedToggle } = props;
   const [formData, setFormData] = useState({
     content: "",
