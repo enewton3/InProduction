@@ -33,8 +33,12 @@ export default function UserMenu(props) {
       >
         <ClickAwayListener onClickAway={handleClose}>
           <div id="user-menu" className="user-menu">
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>Account Settings</MenuItem>
+            <MenuItem disabled onClick={handleClose}>
+              Profile
+            </MenuItem>
+            <MenuItem disabled onClick={handleClose}>
+              Account Settings
+            </MenuItem>
             <MenuItem
               onClick={() => {
                 handleLogout();
