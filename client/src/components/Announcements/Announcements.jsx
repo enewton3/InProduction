@@ -6,7 +6,6 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import React from "react";
 
 export default function Announcements(props) {
   const useStyles = makeStyles((theme) => ({

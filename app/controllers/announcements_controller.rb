@@ -15,7 +15,7 @@ class AnnouncementsController < ApplicationController
 
   def project_announcements
     @project = Project.find(params[:project_id])
-    render json: @project.announcements, include: :user
+    render json: @project.announcements, include: [:user, :timestamps]
   end
 
   # POST /announcements

@@ -2,6 +2,7 @@ import { Divider, Paper } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import defaultImage from "../../assets/images/defaultCardImage.jpg";
 import { getProjectAnnouncements } from "../../services/announcements";
+import AddAnnouncement from "../Announcements/AddAnnouncement";
 import Announcements from "../Announcements/Announcements";
 
 export default function CenterDiv(props) {
@@ -14,7 +15,7 @@ export default function CenterDiv(props) {
       setAnnouncements(anns);
     };
     fetchAnnouncements();
-  }, []);
+  }, [project]);
 
   return (
     <Paper
@@ -30,7 +31,9 @@ export default function CenterDiv(props) {
       <Divider />
       <div className="recent-project-updates">
         <div className="recent-head">Recent Updates</div>
+        <AddAnnouncement setAnnouncements={setAnnouncements} />
         <Divider />
+
         <Announcements announcements={announcements} />
       </div>
     </Paper>
