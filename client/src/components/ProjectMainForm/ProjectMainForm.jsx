@@ -12,6 +12,14 @@ export default function ProjectMainForm(props) {
     }));
   };
 
+  // const handleUpload = (e) => {
+  //   const file = e.target.files[0];
+  //   setFormData((prevState) => ({
+  //     ...prevState,
+  //     image: file,
+  //   }));
+  // };
+
   return (
     <form
       className="main-form"
@@ -20,7 +28,7 @@ export default function ProjectMainForm(props) {
       }}
     >
       <TextField
-        classname="project-form-input"
+        className="project-form-input"
         name="name"
         label="Project Name"
         variant="outlined"
@@ -28,7 +36,7 @@ export default function ProjectMainForm(props) {
         onChange={handleChange}
       />
       <TextField
-        classname="project-form-input"
+        className="project-form-input"
         name="venue"
         label="Venue"
         variant="outlined"
@@ -36,16 +44,30 @@ export default function ProjectMainForm(props) {
         onChange={handleChange}
       />
       <TextField
-        classname="project-form-input"
+        className="project-form-input"
         name="url"
         label="URL"
         variant="outlined"
         value={formData.url}
         onChange={handleChange}
       />
-      <input type="file"></input>
       <TextField
-        classname="project-form-input"
+        className="project-form-input"
+        name="image_url"
+        label="Image URL"
+        variant="outlined"
+        value={formData.image_url}
+        onChange={handleChange}
+      />
+      {/* <input
+        // accept="image/*"
+        type="file"
+        name="image"
+        // value={formData.image}
+        onChange={(e) => handleUpload(e)}
+      /> */}
+      <TextField
+        className="project-form-input"
         name="description"
         label="Description"
         variant="outlined"
@@ -56,22 +78,20 @@ export default function ProjectMainForm(props) {
         <TextField
           id="start-date"
           label="Start Date"
-          type="datetime-local"
+          type="date"
           name="start_date"
           className="input-form-start-date"
           variant="outlined"
-          defaultValue="2021-01-01"
           value={formData.start_date}
           onChange={handleChange}
         />
         <TextField
           id="end-date"
           label="End Date"
-          type="datetime-local"
+          type="date"
           name="end_date"
           className="input-form-end-date"
           variant="outlined"
-          defaultValue="2021-01-02"
           value={formData.end_date}
           onChange={handleChange}
         />

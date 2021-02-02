@@ -64,6 +64,16 @@ input {
   text-decoration: none;
 }
 
+.nav-left-bottom {
+  align-self: center;
+}
+.nav-left-bottom .copyright {
+  font-size: 0.6rem;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
 .nav-top {
   background-color: #672B44;
   color: white;
@@ -226,6 +236,10 @@ input {
   display: flex;
   flex-flow: column wrap;
 }
+.project-card .card-image {
+  width: 100%;
+  max-height: 20%;
+}
 
 #project-card-name {
   text-decoration: none;
@@ -240,26 +254,28 @@ input {
   grid-template-areas: "1 2" "3 4";
   padding: 0;
   align-self: flex-end;
-  column-gap: 1vw;
-  row-gap: 2vh;
+  padding: 10px;
+  row-gap: 1vh;
   width: 100%;
 }
 
 #project-card-button {
   margin: 0;
   text-decoration: none;
-  text-align: center;
   width: 100%;
   height: 100%;
-  justify-self: center;
-  color: white;
+}
+#project-card-button-right {
+  text-align: right;
+  text-decoration: none;
 }
 
 .quick-links-menu {
   grid-area: quick;
-  width: 20vw;
-  background-color: #C4C4C4;
+  max-width: 20vw;
+  background-color: #a4a2a2;
   box-shadow: 2px 2px 2px #686262;
+  margin: 2vh 1vw 5vh 0;
 }
 .quick-links-menu .quick-links-item {
   color: white;
@@ -268,26 +284,39 @@ input {
 
 .information-container {
   grid-area: info;
-  width: 30vw;
+  width: 90%;
   height: 100vh;
-  justify-self: right;
+  justify-self: center;
   align-self: baseline;
-  margin: 2vh 1vw 10vh 1vw;
+  margin: 2vh 1vw 5vh 1vw;
   background-color: #C4C4C4;
+}
+.information-container .info-head {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 1vh 0 1vh 0;
 }
 
 .project-detail-container {
-  margin: 8vh 0 10vh 10vw;
+  margin: 8vh 0 0vh 10vw;
   display: grid;
-  grid-template-areas: "quick img info" "...recent info";
+  grid-template-areas: "quick center info";
 }
-.project-detail-container .project-detail-image {
-  grid-area: img;
-  width: 100%;
+.project-detail-container .center-detail-div {
+  justify-self: center;
+  margin: 2vh 1vw 5vh 1vw;
+  width: 90%;
+  text-align: center;
+}
+.project-detail-container .center-detail-div .project-detail-image {
+  max-width: 100%;
   height: 30vh;
+  margin: 2vh 0 1vh 0;
+  box-shadow: 2px 2px 2px #494848;
 }
-.project-detail-container .recent-project-updates {
-  grid-area: recent;
+.project-detail-container .recent-project-updates .recent-head {
+  font-size: 1.6rem;
+  margin: 2vh 0 2vh 0;
 }
 
 .project-form-container {

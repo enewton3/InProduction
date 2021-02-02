@@ -16,7 +16,7 @@ export default function ProjectForm(props) {
     venue: "",
     description: "",
     url: "",
-    image: "",
+    image_url: "",
     start_date: "2021-01-01",
     end_date: "2021-02-02",
   });
@@ -43,6 +43,7 @@ export default function ProjectForm(props) {
     e.preventDefault();
     if (id) {
       handleUpdate(id, formData);
+      setCurrentProject(formData);
     } else {
       handleCreate(formData);
     }

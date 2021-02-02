@@ -23,7 +23,6 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.owner = @current_user
-    
     if @project.save
       @projectroles = Role.all.each do |role|
         if role.role == 'Owner'
@@ -68,7 +67,7 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :description, :venue, :url, :start_date, :end_date, :owner)
+      params.require(:project).permit(:name, :description, :venue, :url, :start_date, :end_date, :user_id, :id, :image_url)
     end
     
 end

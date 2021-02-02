@@ -1,4 +1,4 @@
-import { Divider, List, ListItem } from "@material-ui/core";
+import { List, ListItem } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 export default function NavLeftLinks(props) {
@@ -11,8 +11,9 @@ export default function NavLeftLinks(props) {
           className="nav-left-link"
           to={`/project/${item.id}`}
         >
-          <ListItem>{item.name}</ListItem>
-          <Divider />
+          <ListItem divider button>
+            {item.name}
+          </ListItem>
         </Link>
       ))}
     </List>
