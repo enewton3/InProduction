@@ -12,6 +12,9 @@ ProjectRole.destroy_all
 User.destroy_all
 Role.destroy_all
 Project.destroy_all
+Announcement.destroy_all
+
+puts "Destroyed Everything."
 
 @admin = User.create!(username:'admin', email: 'admin@admin.com', password:"123456789")
 @evyn = User.create!(username:'evyn', email: 'evyn@evyn.com', password:"123456789")
