@@ -8,7 +8,7 @@ class ProjectRolesController < ApplicationController
   end
 
   def project_roles
-    render json: @project.roles, include: [:user, :role]
+    render json: @project.roles, include: [:role]
   end
 
   def project_users

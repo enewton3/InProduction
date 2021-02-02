@@ -2,6 +2,7 @@ import { Button } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProjectMainForm from "../../components/ProjectMainForm/ProjectMainForm";
+import RolesForm from "../../components/RolesForm/RolesForm";
 
 export default function ProjectForm(props) {
   const {
@@ -57,7 +58,9 @@ export default function ProjectForm(props) {
           setFormData={setFormData}
           handleSubmit={handleSubmit}
         />
-        <div className="roles-form">Roles form</div>
+        <div className="roles-form">
+          <RolesForm />
+        </div>
       </div>
       {id ? (
         <Button

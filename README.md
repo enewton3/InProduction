@@ -34,7 +34,6 @@ Deployed Link -
 - Full CRUD on Projects
 - Fully responsive Styling (Look into MaterialUI, maybe use Sass?)
 - Deployed to Heroku and Netlify
-- Upload project image to AWS
 
 <br>
 
@@ -44,6 +43,7 @@ Deployed Link -
 - Desktop version - Electron
 - Mailing
 - In-App messaging
+- Upload project image to AWS
 
 ### Libraries and Dependencies
 

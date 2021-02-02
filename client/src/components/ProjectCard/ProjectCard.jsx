@@ -31,6 +31,7 @@ export default function ProjectCard(props) {
     <Card className={classes.root}>
       <CardHeader title={project.name} subheader={project.start_date} />
       <CardMedia
+        component="img"
         className={classes.media}
         src={project.image_url ? project.image_url : defaultImage}
         title={project.name}
