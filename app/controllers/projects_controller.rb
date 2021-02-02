@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 
   def show_mine
     @my_projects = ProjectRole.where(user_id: @current_user.id)
-    render json: @my_projects, include: :project
+    render json: @my_projects, include: :project, status: :ok
   end
 
   # POST /projects

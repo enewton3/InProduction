@@ -28,7 +28,7 @@ export default function Announcements(props) {
       {announcements &&
         announcements.map((item) => {
           return (
-            <Card className={classes.root}>
+            <Card className={classes.root} key={item.id}>
               <CardHeader
                 avatar={
                   <Avatar

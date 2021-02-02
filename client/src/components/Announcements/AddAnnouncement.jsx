@@ -5,7 +5,7 @@ export default function AddAnnouncement() {
   return (
     <div>
       <IconButton>
-        <AddBoxIcon fontSize="medium" />
+        <AddBoxIcon fontSize="small" />
       </IconButton>
     </div>
   );

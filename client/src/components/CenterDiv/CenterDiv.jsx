@@ -14,7 +14,9 @@ export default function CenterDiv(props) {
       const anns = await getProjectAnnouncements(project.id);
       setAnnouncements(anns);
     };
-    fetchAnnouncements();
+    if (project.id) {
+      fetchAnnouncements();
+    }
   }, [project]);
 
   return (

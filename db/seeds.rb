@@ -37,7 +37,12 @@ puts "#{Project.count} projects created"
 @projects = Project.all
 @projects.each do |project|
   @roles.each do |role|
-    ProjectRole.create!(user_id: @evyn.id, project: project, role: role)
+    if role[:role] == 'Owner'
+      ProjectRole.create!(user_id: @admin.id, project: project, role: role)
+    else 
+      ProjectRole.create!(user_id: @evyn.id, project: project, role: role)
+    end
+    
   end
 end
 
