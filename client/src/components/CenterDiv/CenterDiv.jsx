@@ -29,7 +29,7 @@ export default function CenterDiv(props) {
       />
       <Divider />
       <div className="recent-project-updates">
-        <div className="recent-head">Recent</div>
+        <div className="recent-head">Recent Updates</div>
         <Divider />
         <Announcements announcements={announcements} />
       </div>
