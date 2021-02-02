@@ -9,10 +9,11 @@
 require 'faker'
 
 ProjectRole.destroy_all
+Announcement.destroy_all
 User.destroy_all
 Role.destroy_all
 Project.destroy_all
-Announcement.destroy_all
+
 
 puts "Destroyed Everything."
 
