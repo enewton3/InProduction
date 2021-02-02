@@ -1,14 +1,11 @@
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import PageviewIcon from "@material-ui/icons/Pageview";
 import { Link } from "react-router-dom";
 import defaultImage from "../../assets/images/defaultCardImage.jpg";
-import { CardHeader, Divider, Grid, IconButton } from "@material-ui/core";
+import { CardHeader, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import LinkIcon from "@material-ui/icons/Link";
 import ChatIcon from "@material-ui/icons/Chat";
@@ -42,7 +39,7 @@ export default function ProjectCard(props) {
       <CardActions
         className={classes.actions}
         disableSpacing
-        alignItems="center"
+        alignitems="center"
         id="project-card-buttons"
       >
         <Link id="project-card-button" to={`/project/${project.id}`}>

@@ -1,7 +1,7 @@
 import NavLeftLinks from "./NavLeftLinks";
 import { ProjectsContext } from "../../../context/ProjectsContext";
 import { Link } from "react-router-dom";
-import { Button, ListItem } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import CopyrightIcon from "@material-ui/icons/Copyright";
 
 export default function NavLeft(props) {
