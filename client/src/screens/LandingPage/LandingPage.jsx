@@ -1,9 +1,17 @@
-import { Paper } from "@material-ui/core";
+import { makeStyles, Paper } from "@material-ui/core";
 // import { useEffect, useState } from "react";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 
 export default function LandingPage(props) {
   const { uniqueProjects } = props;
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      backgroundColor: "#a4a2a2",
+    },
+  }));
+
+  const classes = useStyles();
 
   return (
     <div className="landing-page-container">
@@ -19,7 +27,7 @@ export default function LandingPage(props) {
       </div>
       <div className="updates-container">
         <div className="updates-header">Project Updates</div>
-        <Paper className="updates-paper"></Paper>
+        <Paper className={`updates-paper ${classes.root}`}></Paper>
       </div>
     </div>
   );

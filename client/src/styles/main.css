@@ -74,6 +74,20 @@ input {
   align-items: center;
 }
 
+.nav-project-info {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+.nav-project-info .nav-project-name {
+  font-size: 1.4rem;
+}
+.nav-project-info .nav-project-button {
+  text-decoration: none;
+  margin: 0 1vw 0 1vw;
+}
+
 .nav-top {
   background-color: #672B44;
   color: white;

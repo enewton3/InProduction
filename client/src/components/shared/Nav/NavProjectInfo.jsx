@@ -13,8 +13,13 @@ export default function NavProjectInfo(props) {
           return (
             <>
               {user && project.user_id === user.id && (
-                <Link to={`/project-edit/${project.id}`}>
-                  <Button>Project Settings</Button>
+                <Link
+                  className="nav-project-button"
+                  to={`/project-edit/${project.id}`}
+                >
+                  <Button variant="outlined" color="secondary">
+                    Project Settings
+                  </Button>
                 </Link>
               )}
             </>

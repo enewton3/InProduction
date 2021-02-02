@@ -1,45 +1,54 @@
-import { TextField } from "@material-ui/core";
-import AutoComplete from "@material-ui/lab/Autocomplete";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { getProjectRoles } from "../../services/roles";
-import { getAllUsers } from "../../services/users";
+// import { TextField } from "@material-ui/core";
+// import AutoComplete from "@material-ui/lab/Autocomplete";
+// import { useState, useEffect } from "react";
+// import { useParams } from "react-router-dom";
+// import { getProjectRoles } from "../../services/roles";
+// import { getAllUsers } from "../../services/users";
 
 export default function RolesForm(props) {
-  const { formData, setFormData } = useState({});
-  const { project } = props;
-  const params = useParams();
+  // const { formData, setFormData } = useState({});
+  // const { project } = props;
+  // const params = useParams();
 
-  const [roles, setRoles] = useState([]);
-  const [users, setUsers] = useState([]);
+  // const [roles, setRoles] = useState([]);
+  // const [users, setUsers] = useState([]);
 
-  const fetchRoles = async () => {
-    const project_roles = await getProjectRoles(params.id);
-    setRoles(project_roles);
-  };
+  // const fetchRoles = async () => {
+  //   const project_roles = await getProjectRoles(params.id);
+  //   setRoles(project_roles);
+  // };
 
-  const fetchUsers = async () => {
-    const users = await getAllUsers();
-    setUsers(users);
-  };
+  // const fetchUsers = async () => {
+  //   const users = await getAllUsers();
+  //   setUsers(users);
+  // };
 
-  useEffect(() => {
-    fetchRoles();
-    fetchUsers();
-  }, [params.id]);
+  // const fetchFormData = () => {
+  // const usernames = users.map((item) => item.username);
+  // const rolenames = roles.map((item) => item.role.role);
+  //return an object with role names as keys and user names as values
+  // };
 
-  const defaultProps = {
-    options: users,
-    getOptionLabel: (user) => user.name,
-  };
+  // useEffect(() => {
+  //   fetchRoles();
+  //   fetchUsers();
+  // }, [params.id]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  // useEffect(() => {
+  //   fetchFormData();
+  // }, [users, roles]);
+  // const defaultProps = {
+  //   options: users,
+  //   getOptionLabel: (user) => user.name,
+  // };
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
 
   // const flatProps = {
   //   options: top100Films.map((option) => option.title),
@@ -48,18 +57,20 @@ export default function RolesForm(props) {
   return (
     <div>
       {roles.map((role) => {
-        const roleName = role.role.role;
+        const roleId = role.role.id;
         return (
-          <AutoComplete
-            {...defaultProps}
-            // id="auto-complete"
-            // name={role.role.id}
-            value={formData[roleName]}
-            onChange={(e) => handleChange(e)}
-            renderInput={(params) => (
-              <TextField {...params} label="role" margin="normal" />
-            )}
-          />
+          <div></div>
+          // <AutoComplete
+          //   id="auto-complete"
+          //   name={roleId}
+          //   options={users}
+          //   value={formData[roleId]}
+          //   onChange={(e) => handleChange(e)}
+          //   renderInput={(params) => (
+          //     <TextField {...params} label="role" margin="normal" />
+          //   )}
+          // />
+          // );
         );
       })}
     </div>

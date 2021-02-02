@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 ProjectRole.destroy_all
 User.destroy_all
 Role.destroy_all
@@ -36,4 +38,12 @@ puts "#{Project.count} projects created"
   end
 end
 
-# ProjectRole.create!(user: @evyn, project: @wicked, role: @roles.first)
+puts "#{ProjectRole.count} Roles associated with Projects"
+
+@projects.each do |project|
+  3.times do 
+    Announcement.create!(user: @evyn, project: project, content: Faker::Lorem.paragraph)
+  end
+end
+
+puts "#{Announcement.count} announcements created"

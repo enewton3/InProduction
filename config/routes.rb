@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :announcements
   resources :users
   resources :projects
   resources :roles
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
   get 'projects/:project_id/my_roles', to: 'project_roles#user_project_roles'
   put 'projects/:project_id/roles', to: 'project_roles#update_role'
   # delete 'projects/:project_id/roles', to: 'project_roles#destroy_project_roles'
+
+  get 'projects/:project_id/announcements/', to: 'announcements#project_announcements'
 
 end
 

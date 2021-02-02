@@ -39,7 +39,6 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   def update
-    puts "owner!!!! #{@project.owner}"
     if @current_user == @project.owner && @project.update(project_params)
       render json: @project
     else
