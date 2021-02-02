@@ -4,20 +4,28 @@ import { Link } from "react-router-dom";
 export default function QuickLinks() {
   return (
     <List className="quick-links-menu">
-      <Link to="" className="quick-links-item">
-        <ListItem button>RESOURCES</ListItem>
+      <Link to="#" className="quick-links-item">
+        <ListItem disabled button>
+          RESOURCES
+        </ListItem>
       </Link>
       <Divider />
-      <Link to="" className="quick-links-item">
-        <ListItem button>SCHEDULE</ListItem>
+      <Link to="#" className="quick-links-item">
+        <ListItem disabled button>
+          SCHEDULE
+        </ListItem>
       </Link>
       <Divider />
-      <Link to="" className="quick-links-item">
-        <ListItem button>CONTACT SHEET</ListItem>
+      <Link to="#" className="quick-links-item">
+        <ListItem disabled button>
+          CONTACT SHEET
+        </ListItem>
       </Link>
       <Divider />
-      <Link to="" className="quick-links-item">
-        <ListItem button>MESSAGES</ListItem>
+      <Link to="#" className="quick-links-item">
+        <ListItem disabled button>
+          MESSAGES
+        </ListItem>
       </Link>
     </List>
   );

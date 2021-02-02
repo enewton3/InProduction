@@ -24,12 +24,18 @@ export default function Information(props) {
       <div className="project-information-blurb">
         <div className="info-head">Information</div>
         <Divider />
-        <div>Project Description</div>
-        <div>{project.description}</div>
-        <div>Start Date</div>
-        <div>{project.start_date}</div>
-        <div>End Date</div>
-        <div>{project.end_date}</div>
+        <div className="project-information">
+          <div>Project Description</div>
+          <div>{project.description}</div>
+          <div className="date-info">
+            <div>Start Date</div>
+            <div>{project.start_date}</div>
+          </div>
+          <div className="date-info">
+            <div>End Date</div>
+            <div>{project.end_date}</div>
+          </div>
+        </div>
       </div>
       <div className="important-contacts">
         <Divider />
