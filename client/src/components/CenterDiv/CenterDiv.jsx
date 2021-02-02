@@ -4,9 +4,11 @@ import defaultImage from "../../assets/images/defaultCardImage.jpg";
 import { getProjectAnnouncements } from "../../services/announcements";
 import AddAnnouncement from "../Announcements/AddAnnouncement";
 import Announcements from "../Announcements/Announcements";
+import { UserContext } from "../../context/UserContext";
 
 export default function CenterDiv(props) {
   const [announcements, setAnnouncements] = useState([]);
+  const [announcedToggle, setAnnouncedToggle] = useState(false);
   const { project } = props;
 
   useEffect(() => {
@@ -17,7 +19,9 @@ export default function CenterDiv(props) {
     if (project.id) {
       fetchAnnouncements();
     }
-  }, [project]);
+  }, [project, announcedToggle]);
+
+  // useEffect(() => {}, [announcedToggle]);
 
   return (
     <Paper
@@ -33,10 +37,21 @@ export default function CenterDiv(props) {
       <Divider />
       <div className="recent-project-updates">
         <div className="recent-head">Recent Updates</div>
-        <AddAnnouncement setAnnouncements={setAnnouncements} />
         <Divider />
+        <div className="project-updates">
+          <UserContext.Consumer>
+            {(user) => {
+              return (
+                <AddAnnouncement
+                  setAnnouncedToggle={setAnnouncedToggle}
+                  currentUser={user}
+                />
+              );
+            }}
+          </UserContext.Consumer>
 
-        <Announcements announcements={announcements} />
+          <Announcements announcements={announcements} />
+        </div>
       </div>
     </Paper>
   );

@@ -331,11 +331,24 @@ input {
 .project-detail-container .recent-project-updates {
   display: flex;
   flex-flow: column wrap;
-  align-items: center;
 }
 .project-detail-container .recent-project-updates .recent-head {
   font-size: 1.6rem;
-  margin: 2vh 0 0vh 0;
+  margin: 2vh 0 2vh 0;
+}
+.project-detail-container .recent-project-updates .project-updates {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.project-detail-container .recent-project-updates .project-updates .add-announcement-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1vh 0 1vh 0;
+}
+.project-detail-container .recent-project-updates .project-updates .submit-announce {
+  align-self: flex-end;
 }
 
 .project-form-container {

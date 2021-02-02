@@ -32,7 +32,7 @@ export default function ProjectDetail(props) {
         </div>
       ) : (
         <div className="project-detail-container">
-          <Backdrop>
+          <Backdrop open>
             <CircularProgress />
           </Backdrop>
         </div>
