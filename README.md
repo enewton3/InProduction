@@ -23,7 +23,7 @@
 
 _**InProduction** is a productivity and social app for theatrical productions. Create a project to track workflow and get in touch with collaborators quickly. A user can create a project and assign other users roles within that project_
 
-Deployed Link -
+[Deployed Site](https://inproduction.netlify.app/)
 
 <br>
 

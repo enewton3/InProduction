@@ -1,3 +1,5 @@
+// import { IconButton } from "@material-ui/core";
+// import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from "react-router-dom";
 import { ProjectContext } from "../../../context/ProjectContext";
 import { UserContext } from "../../../context/UserContext";
@@ -9,6 +11,11 @@ export default function NavTop(props) {
 
   return (
     <div className="nav-top">
+      {/* {window.innerWidth <= 1024 ? (
+        <IconButton>
+          <MenuIcon />
+        </IconButton>
+      ) : null} */}
       <Link className="logo" to="/">
         InProduction
       </Link>
