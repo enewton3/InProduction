@@ -9,6 +9,8 @@
   left: 10vw
   background: none
   overflow: auto
+  @media only screen and (max-width: 500px)
+    grid-template-areas: '1'
 
   .project-cards-container
     // margin-top: 1vh
@@ -30,6 +32,9 @@
     column-gap: 1vw
     row-gap: 2vh
     overflow: scroll
+    @media only screen and (max-width: 1024px)
+      grid-template-areas: '1'
+      justify-content: center
 
 .updates-container
   width: 30vw
